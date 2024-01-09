@@ -9,6 +9,9 @@ if [[ -f "${HOME}/.config/monitors.xml" ]]; then
   mv "${HOME}/.config/monitors.xml" "${HOME}/.config/monitors.xml.bak"
 fi
 
+# Disable assistive technologies which don't work through VNC
+export NO_AT_BRIDGE=1
+
 # Disable useless services on autostart
 AUTOSTART="${HOME}/.config/autostart"
 rm -fr "${AUTOSTART}"    # clean up previous autostarts
